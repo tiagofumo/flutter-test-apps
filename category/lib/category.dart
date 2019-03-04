@@ -1,30 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 
 class CategoryListItem extends StatelessWidget {
-  final String type;
+  final String label;
+  final IconData icon;
 
-  CategoryListItem(this.type);
+  const CategoryListItem({
+    Key key,
+    @required this.label,
+    @required this.icon,
+  }) : assert(label != null),
+       assert(icon != null),
+       super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var myIcon;
-    switch(this.type) {
-      case 'cake':
-        myIcon = Icons.cake;
-        break;
-      case 'call':
-        myIcon = Icons.call;
-        break;
-      case 'camera':
-        myIcon = Icons.camera;
-        break;
-      case 'chat':
-        myIcon = Icons.chat;
-        break;
-      case 'computer':
-        myIcon = Icons.computer;
-        break;
-    }
     return Material(
       color: Colors.yellow[200],
       child: Container(
@@ -42,13 +32,13 @@ class CategoryListItem extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 5.0, right: 25.0),
                   child: Icon(
-                    myIcon,
+                    icon,
                     size: 40.0,
                   )
                 ),
                 Center(
                   child: Text(
-                    'My $type',
+                    'My $label',
                     style: TextStyle(
                       fontSize: 20.0
                     )

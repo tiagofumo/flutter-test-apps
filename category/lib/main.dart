@@ -15,11 +15,26 @@ class ListApp extends StatelessWidget {
         backgroundColor: Colors.yellow[200],
         body: ListView(
           children: <CategoryListItem>[
-            CategoryListItem('cake'),
-            CategoryListItem('call'),
-            CategoryListItem('camera'),
-            CategoryListItem('chat'),
-            CategoryListItem('computer'),
+            CategoryListItem(
+              label: 'cake',
+              icon: Icons.cake,
+            ),
+            CategoryListItem(
+              label: 'call',
+              icon: Icons.call,
+            ),
+            CategoryListItem(
+              label: 'camera',
+              icon: Icons.camera,
+            ),
+            CategoryListItem(
+              label: 'chat',
+              icon: Icons.chat,
+            ),
+            CategoryListItem(
+              label: 'computer',
+              icon: Icons.computer,
+            ),
           ],
         ),
       )
