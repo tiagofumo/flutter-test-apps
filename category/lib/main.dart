@@ -13,29 +13,35 @@ class ListApp extends StatelessWidget {
       ),
       home: Scaffold(
         backgroundColor: Colors.yellow[200],
-        body: ListView(
-          children: <CategoryListItem>[
-            CategoryListItem(
-              label: 'cake',
-              icon: Icons.cake,
-            ),
-            CategoryListItem(
-              label: 'call',
-              icon: Icons.call,
-            ),
-            CategoryListItem(
-              label: 'camera',
-              icon: Icons.camera,
-            ),
-            CategoryListItem(
-              label: 'chat',
-              icon: Icons.chat,
-            ),
-            CategoryListItem(
-              label: 'computer',
-              icon: Icons.computer,
-            ),
-          ],
+        body: OrientationBuilder(
+          builder: (context, orientation) {
+            return GridView.count(
+              crossAxisCount: orientation == Orientation.portrait ? 1 : 2,
+              childAspectRatio: 5,
+              children: <CategoryListItem>[
+                CategoryListItem(
+                  label: 'cake',
+                  icon: Icons.cake,
+                ),
+                CategoryListItem(
+                  label: 'call',
+                  icon: Icons.call,
+                ),
+                CategoryListItem(
+                  label: 'camera',
+                  icon: Icons.camera,
+                ),
+                CategoryListItem(
+                  label: 'chat',
+                  icon: Icons.chat,
+                ),
+                CategoryListItem(
+                  label: 'computer',
+                  icon: Icons.computer,
+                ),
+              ],
+            );
+          },
         ),
       )
     );

@@ -19,7 +19,7 @@ class CategoryListItem extends StatelessWidget {
       color: Colors.yellow[200],
       child: Container(
         child: Padding(
-          padding: EdgeInsets.all(5.0),
+          padding: EdgeInsets.all(1.0),
           child: InkWell(
             borderRadius: BorderRadius.circular(10.0),
             highlightColor: Colors.yellow,
